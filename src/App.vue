@@ -19,6 +19,7 @@ export default {
 <style>
 *{margin:0;padding:0;}
 ul,ol{list-style:none;}
+html{font-size:14px;}
 body{background:#e1e1e1;}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

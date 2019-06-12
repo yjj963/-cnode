@@ -4,6 +4,9 @@ import Article from '../components/article'
 import Postlist from '../components/Postlist'
 import UseInfo from '../components/UseInfo'
 import Slidebar from '../components/slidebar'
+import Ask from '../components/Ask'
+import Good from '../components/Good'
+import Share from '../components/Share'
 
 Vue.use(Router)
 
@@ -30,6 +33,28 @@ export default new Router({
       components:{
         main:UseInfo
       }
+    },
+    {
+      name:'',
+      path: '/ask',
+      components:{
+        main:Ask
+      }
+    },
+    {
+      name:'',
+      path: '/share',
+      components:{
+        main:Share
+      }
+    },
+    {
+      name:'',
+      path: '/good',
+      components:{
+        main:Good
+      }
     }
+
   ]
 })

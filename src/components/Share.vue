@@ -8,13 +8,13 @@
         <li>
           <div class="topbar">
             <router-link :to='{name:"root"}'>
-              <span class="active">全部</span>
+              <span>全部</span>
             </router-link>
             <router-link to='./Good'>
               <span>精华</span>
             </router-link>
             <router-link to='./Share'>
-              <span>分享</span>
+              <span class="active">分享</span>
             </router-link>
             <router-link to='./Ask'>
               <span>问答</span>
@@ -22,7 +22,7 @@
             <span>招聘</span>
           </div>
         </li>
-        <li v-for='post in posts'>
+        <li v-for='post in posts' v-if='post.tab==="share" && post.top===false'>
           <router-link :to="{
             name:'user_info',
             params:{
@@ -62,7 +62,7 @@
 <script>
 import pagination from './Pagination'
 export default {
-  name: 'Postlist',
+  name: 'Share',
   data:function(){
     return{
       isLoading:false,
@@ -88,7 +88,6 @@ export default {
       .then((res)=>{
         this.isLoading=false
         this.posts=res.data.data
-        console.log(this.posts)
       })
       .catch((err)=>{
         console.log(err)

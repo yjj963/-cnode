@@ -50,6 +50,7 @@ export default {
       }
       if(page==this.pagebtns[4]){
         this.pagebtns.shift()
+        console.log(this.pagebtns)
         this.pagebtns.splice(4,0,this.pagebtns[3]+1)
 
       }else if(page==this.pagebtns[0] && page!=1){

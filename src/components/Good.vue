@@ -8,10 +8,10 @@
         <li>
           <div class="topbar">
             <router-link :to='{name:"root"}'>
-              <span class="active">全部</span>
+              <span>全部</span>
             </router-link>
             <router-link to='./Good'>
-              <span>精华</span>
+              <span class='active'>精华</span>
             </router-link>
             <router-link to='./Share'>
               <span>分享</span>
@@ -22,7 +22,7 @@
             <span>招聘</span>
           </div>
         </li>
-        <li v-for='post in posts'>
+        <li v-for='post in posts' v-if='post.good'>
           <router-link :to="{
             name:'user_info',
             params:{
@@ -62,7 +62,7 @@
 <script>
 import pagination from './Pagination'
 export default {
-  name: 'Postlist',
+  name: 'Good',
   data:function(){
     return{
       isLoading:false,
@@ -82,13 +82,12 @@ export default {
       this.$http.get('https://cnodejs.org/api/v1/topics',{
         params:{
           page:this.postpage,
-          limit:10
+          limit:100
         }
       })
       .then((res)=>{
         this.isLoading=false
         this.posts=res.data.data
-        console.log(this.posts)
       })
       .catch((err)=>{
         console.log(err)
