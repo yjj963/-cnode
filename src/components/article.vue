@@ -21,7 +21,7 @@
       </div>
       <div id="reply">
       <div class="topbar">回复</div>
-      <div v-for="(reply,index)  in post.replies" class="replySec">
+      <div v-for="(reply,index) in post.replies" class="replySec">
         <div class="replyUp">
           <router-link :to="{
           name:'user_info',

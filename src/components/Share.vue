@@ -1,8 +1,5 @@
 <template>
   <div class="Postlist">
-    <div class='loading' v-if='isLoading'>
-      <img src='../assets/loading.gif'/>
-    </div>
     <div>
       <ul>
         <li>
@@ -20,6 +17,9 @@
               <span>问答</span>
             </router-link>
             <span>招聘</span>
+          </div>
+          <div class='loading' v-if='isLoading'>
+            <img src='../assets/loading.gif'/>
           </div>
         </li>
         <li v-for='post in posts' v-if='post.tab==="share" && post.top===false'>
